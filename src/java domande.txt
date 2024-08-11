@@ -1,0 +1,13 @@
+what is casting in java
+1 domanda !" Type casting is a powerful feature in Java that allows us to convert variables from one data type to another. Implicit type casting, also known as widening conversion, is done automatically by the compiler when there is no loss of data."
+
+
+
+what is memory reference?
+ 2  In Java, references are used to access objects, which are variables that hold the “address” of an area of memory in which the attributes of an object will be stored. This memory is allocated on the heap area. When you declare a field or local variable, this is only a reference to an object on the heap, not the object itself. When it comes to creating an object, the required amount of memory is requested from the heap, and this object can then be accessed through the reference variable. 
+
+
+3 what are decision constructs in java
+Decision Making in programming is similar to decision-making in real life. In programming also face some situations where we want a certain block of code to be executed when some condition is fulfilled. 
+
+A programming language uses control statements to control the flow of execution of a program based on certain conditions. These are used to cause the flow of execution to advance and branch based on changes to the state of a program. 
