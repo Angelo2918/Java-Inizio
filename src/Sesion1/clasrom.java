@@ -1,3 +1,5 @@
+package Sesion1;
+
 public class clasrom {
     public static void main(String[] args){
         int students = 150;
