@@ -1,3 +1,5 @@
+package Homework;
+
 public class Homework8 {
     public static void main(String[] args){
 //Create a program that takes two byte values, adds them together,

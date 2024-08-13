@@ -1,4 +1,5 @@
-import java.security.cert.CertPathValidatorException;
+package Homework;
+
 import java.util.Scanner;
 
 public class Homework9 {

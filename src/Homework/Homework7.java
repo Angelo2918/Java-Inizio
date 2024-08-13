@@ -1,3 +1,5 @@
+package Homework;
+
 public class Homework7 {
     public static void main(String[] args) {
        //Write a program where you perform operations between an integer and a double.
