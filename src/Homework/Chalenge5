@@ -1,0 +1,64 @@
+1. Even or Odd Checker
+Write a Java program that takes an integer as input. If the number is even, print "Even". If it's odd, print "Odd".
+
+2. Month Name Finder
+Write a program that asks the user to enter a number between 1 and 12. Print the name of the corresponding month or "Invalid Month" if out of range.
+
+3. Counting Negative Numbers
+Given an array of integers, write a program to count and print the number of negative integers in the array.
+
+4. String Reverser
+Ask the user to enter a string. Print the reversed version of this string.
+
+5. Fibonacci Series Generator
+Write a program that generates and prints the first n numbers of the Fibonacci series, where n is provided by the user.
+
+6. While Loop
+Write a program that asks the user to enter numbers. The program should continue prompting the user until they enter -1. After they enter -1, print the sum of all numbers entered (excluding -1).
+
+7. Do-While Loop
+Create a program where the user is prompted to guess a predefined number. After each guess, the program should inform the user if the guess is too high or too low. The program should keep prompting the user until they guess correctly. Using a do-while loop, ensure the user is always asked at least once.
+
+8. For Loop
+Write a program that prints the first 10 numbers in the Fibonacci series. Use a for loop to accomplish this.
+
+9. For-Each Loop
+Given an array of integers, write a program that prints each number in the array followed by "Even" if the number is even, or "Odd" if the number is odd. Utilize a for-each loop for this task.
+
+10. Jump Statements
+Create a menu-driven program where the user is presented with options:
+
+Print "Hello World"
+Print the user's name.
+Exit.
+Based on the user's input, perform the necessary action. Once an action is completed, show the menu again, unless the user chooses the Exit option. Use jump statements to control the flow of the program.
+
+11. Break Statement
+Write a program that prompts the user to enter numbers. Calculate the average of these numbers. If the user enters 0, break out of the input loop and then print the average of the numbers entered so far.
+
+12. Continue Statement
+Create a program that asks the user for 10 numbers. Print the sum of all numbers that are greater than 5. If the user enters a number less than or equal to 5, use the continue statement to skip the addition for that number.
+
+13. Pathfinding in a Maze
+Consider a simple maze represented by a 2D grid. The maze consists of open cells, walls, a start, and an end. You have to find a path from the start to the end, moving only up, down, left, or right. You can't move diagonally. If a path exists, print it; otherwise, inform the user that there's no solution.
+
+The maze will be represented by a 2D array where:
+0 represents an open cell.
+1 represents a wall.
+S represents the start.
+E represents the end.
+
+Example:
+S 1 0 1
+0 1 0 1
+0 1 0 1
+1 0 0 E
+
+Problem Tasks:
+Read the maze layout from a file or hard-code it into your program.
+Implement a pathfinding algorithm to navigate from the start to the end.
+If a path is found, print the maze with the path. You can represent the path with a *.
+If no path exists, print "No solution found."
+Hints:
+Consider using a Depth-First Search (DFS) or Breadth-First Search (BFS) algorithm for pathfinding.
+You might want to represent the maze using a class with methods to detect neighbors, check for walls, etc.

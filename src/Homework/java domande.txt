@@ -10,4 +10,11 @@ what is memory reference?
 3 what are decision constructs in java
 Decision Making in programming is similar to decision-making in real life. In programming also face some situations where we want a certain block of code to be executed when some condition is fulfilled. 
 
-A programming language uses control statements to control the flow of execution of a program based on certain conditions. These are used to cause the flow of execution to advance and branch based on changes to the state of a program. 
+A programming language uses control statements to control the flow of execution of a program based on certain conditions. These are used to cause the flow of execution to advance and branch based on changes to the state of a program.
+
+
+4.How do I calculate space and time complexity?
+
+
+
+5.How do I know when my code is hard to understand by others?
