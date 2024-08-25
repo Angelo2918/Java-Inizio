@@ -1,12 +1,57 @@
 package Sesion6JavaAPIs;
 
 import java.sql.SQLOutput;
+import java.util.StringJoiner;
 
 public class Main {
-    public static void main(String[] args ){
+    public static void main(String[] args ) {
         //stringPool();
         // productCodeComparison();
+        //stringOperations();
+//stringCreation();
+        StringBuilder sb = new StringBuilder("Hello World!");
+        System.out.println("Revers: " + sb.reverse().toString());
 
+
+
+
+
+//String[] words = {"sam","ion","dan","bob"};
+//StringBuilder stringBuilder = new StringBuilder();
+//    for(String word : words) {
+//    stringBuilder.append(word).append(" ");
+//    }
+//        System.out.println("Concatenated string: " + stringBuilder.toString());
+
+//        StringJoiner stringJoiner = new StringJoiner(" ", "[", "]");
+//        for (String word : words) {
+//            stringJoiner.add(word);
+//
+//        }
+//        System.out.println("Concatenated string: " +stringJoiner.toString());
+
+    }
+    public static void stringCreation() {
+       String s1 = Integer.valueOf(1000).toString();
+       String s2 = "1000";
+       String s3 = new String("1000");
+       String s4 = "1000";
+        System.out.println("s1 == s2: " + (s1 == s2));
+        System.out.println("s1.equals(s2): " + s1.equals(s2));
+        System.out.println("s2 == s3: " + (s2 == s3));
+        System.out.println("s2 ==s4: " + (s2 == s4));
+
+        System.out.println("s1 identity: " + System.identityHashCode(s1));
+        System.out.println("s2 identity: " + System.identityHashCode(s2));
+        System.out.println("s3 identity: " + System.identityHashCode(s3));
+        System.out.println("s4 identity: " + System.identityHashCode(s4));
+
+
+    }
+
+
+
+         public static void stringOperations() {
         String str = "Hello World!";
         String str1 = "hello world!";
         System.out.println("Using equals: " + str.equals(str1));
@@ -53,4 +98,17 @@ public class Main {
 
 
     }
+
+//    String str = "Hello World!";
+//    int middleIndex = str.length() / 2;
+//    String middleSubstring = str.substring(middleIndex - 1, middleIndex +2);
+//        System.out.println("The middle three chars are: " + middleSubstring);
+//
+//    String email = "user@example.com";
+//    String domain = email.substring(email.indexOf("@") + 1);
+//        System.out.println("domain = " +domain);
+//
+//    String domain2 = email.split("@") + [1];
+//        System.out.println();
+
 }
