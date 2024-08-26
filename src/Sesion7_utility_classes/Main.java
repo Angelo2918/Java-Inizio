@@ -1,5 +1,6 @@
 package Sesion7_utility_classes;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.SQLOutput;
@@ -15,8 +16,32 @@ public class Main {
         //demonstrateDateTimeOperations();
         //demonstrationRandomNumberGenerator();
        // demoMath();
-        readFromFileWithScanner();
+        //readFromFileWithScanner();
+        //gui();
     }
+
+    public static void gui(){  //interfata grafica
+        JFrame frame = new JFrame("Gui Example");
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JButton button = new JButton("Click me!");
+        JLabel label = new JLabel("");
+
+        button.addActionListener(e-> label.setText("Salut Angelo!"));
+
+        frame.getContentPane().add(button,"North");
+        frame.getContentPane().add(label,"Center");
+
+        frame.setVisible(true);
+
+
+
+    }
+
+
+
+
 private static void readFromFileWithScanner(){
         try {
             Scanner scanner = new Scanner(new File("example.txt"));
