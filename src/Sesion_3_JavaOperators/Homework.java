@@ -1,4 +1,4 @@
-package Sesion4;
+package Sesion_3_JavaOperators;
 
 public class Homework {
     public static void main(String [] args) {

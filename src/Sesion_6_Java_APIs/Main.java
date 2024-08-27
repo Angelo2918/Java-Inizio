@@ -1,4 +1,4 @@
-package Sesion6JavaAPIs;
+package Sesion_6_Java_APIs;
 
 public class Main {
     public static void main(String[] args ) {

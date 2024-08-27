@@ -1,4 +1,4 @@
-package Sesion1;
+package Sesion_1_JavaSetup_JavaBasic;
 
 public class Code2 {
     public static void main(String[] args) {

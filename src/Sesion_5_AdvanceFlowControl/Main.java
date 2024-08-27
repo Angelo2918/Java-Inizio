@@ -1,6 +1,4 @@
-package Sesion5;
-
-import java.util.Scanner;
+package Sesion_5_AdvanceFlowControl;
 
 public class Main {
 //    public static void main(String[] args) {
