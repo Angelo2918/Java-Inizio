@@ -1,24 +1,50 @@
 public class Code {
-    public static void main(String[] args){
-        int valA = 21;
-        int valB = 6;
-        int valC = 3;
-        int valD =1;
+    public static void main(String[] args) {
 
+        class Roman {
+            int value(char r) {
+                if (r == 'I')
+                    return 1;
+                if (r == 'V')
+                    return 5;
+                if (r == 'X')
+                    return 10;
+                if (r == 'L')
+                    return 50;
+                if (r == 'C')
+                    return 100;
+                if (r == 'D')
+                    return 500;
+                if (r == 'M')
+                    return 1000;
+                return -1;
+            }
 
-        int rez1 = valA - valB / valC;
-        System.out.println("Rez1 = " + rez1);
+            int romanToInt(String s) {
+                int total = 0;
+                for (int i = 0; i < s.length(); i++) {
+                    int s1 = value(s.charAt(i));
+                    if (i + 1 < s.length()) {
+                        int s2 = value(s.charAt(i + 1));
+                        if (s1 >= s2) {
+                            total = total + s1;
+                        } else {
+                            total = total - s1;
+                        }
+                    } else {
+                        total = total + s1;
+                    }
+                }
+                return total;
+            }
 
-        int rez2 = (valA - valB) / valC;
-        System.out.println("Rez2 = " + rez2);
-
-        int rez3 = valA / valC *valD +valB;
-        System.out.println("rez3 = " + rez3);
-
-        int rez4 = valA / (valC * (valD+valB));
-        System.out.println("rez4 = " + rez4);
-
-
-
+            // Driver code
+            public static void main(String args[]) {
+                Roman ob = new Roman();
+                String val = "MCMXCIV";
+                System.out.println(ob.romanToInt(val));
+            }
+        }
     }
 }
+

@@ -1,3 +1,5 @@
+package Sesion_1_JavaSetup_JavaBasic;
+
 public class Calc {
     public static void main(String[] args) {
 

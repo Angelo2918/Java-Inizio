@@ -1,0 +1,361 @@
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework {
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+//Write a Java program to take two numbers as input and display the result
+// of addition, subtraction, multiplication, division, and modulus.
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        System.out.println("Addition: " + (num1 + num2));
+        System.out.println("Substraction: " + (num1 - num2));
+        System.out.println("Multiplication: " + (num1 * num2));
+        System.out.println("Division: " + (num1 / num2));
+        System.out.println("Modulus: " + (num1 % num2));
+
+
+    }
+}
+
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework2 {
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+//Create a Java program where you increment and decrement the same variable.
+// Display the value of the variable after each operation.
+
+    int x = 20;
+    System.out.println("Initiale value: " + x);
+
+    x++;
+    System.out.println("After increment: " + x);
+
+    x--;
+    System.out.println("After decrement: " + x);
+}
+}
+
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+//Write a program to check if a number is positive or negative using logical complement operator.
+
+        System.out.print("Enter a number");
+        int num = scanner.nextInt();
+
+        boolean isPositive = (num > 0);
+
+        if (isPositive) {
+            System.out.println("The number is positive.");
+        } else {
+            System.out.println("The number is negative.");
+
+
+        }
+    }
+}
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+//Write a Java program that uses both the increment (++) and decrement (--)
+// operators in a loop to count up to 10 and then back down to 1.
+
+        for (int a = 1; a <= 10; a++) {
+            System.out.println("A value up is: " + a);
+
+        }
+
+        for (int a = 10; a >= 1; a--) {
+
+                System.out.println("A value down is: " + a);
+
+        }
+    }
+}
+package Homework;
+
+public class Homework5 {
+public static void main(String[] args){
+
+//Create a Java program that demonstrates the use of each compound
+// assignment operator with integers.
+
+
+    int s = 16;
+
+    s += 5; //s = s + 5;
+    System.out.println("s + 5 = " + s);
+    s -= 5; //s = s - 5;
+    System.out.println("s - 5 = " + s);
+    s *= 5; // s = s * 5;
+    System.out.println("s * 5 = " + s);
+    s /= 5; // s = s / 5;
+    System.out.println("s / 5 = " + s);
+    s %= 5; // s = s % 5:
+    System.out.println("s % 5 = " + s);
+
+}
+}
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework6 {
+public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+//Write a Java program that takes two numbers from the user and uses relational operators to display whether the first
+// number is greater than, less than, or equal to the second number.
+
+    System.out.print("Enter first number:");
+    int num1 = scanner.nextInt();
+    System.out.print("Enter second number:");
+    int num2 = scanner.nextInt();
+
+
+    if (num1 < num2) {
+
+    System.out.println("First number is less than second number.");
+    } else if (num1 > num2) {
+    System.out.println("First number is grater than second number.");
+    } else {
+        System.out.println("First number is equal to second number.");
+    }
+}
+}
+package Homework;
+
+public class Homework7 {
+    public static void main(String[] args) {
+       //Write a program where you perform operations between an integer and a double.
+
+        int s = 8;
+        double a = 3.5;
+
+        double result = s + a;
+        System.out.println("Integer + Double: " + result);
+
+        result = s - a;
+        System.out.println("Integer - Double: " + result);
+
+        result = s * a;
+        System.out.println("Integer * Double: " + result);
+
+        result = s / a;
+        System.out.println("Integer / Double: " + result);
+    }
+
+    }
+package Homework;
+
+public class Homework8 {
+    public static void main(String[] args){
+//Create a program that takes two byte values, adds them together,
+// and stores the result in a byte variable.
+
+    byte firstByte = 100;
+    byte secondByte = 126;
+
+    int sum;
+
+ sum = firstByte + secondByte;
+        System.out.println("Result of the two bytes: " + sum);
+
+
+    }
+}
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework9 {
+public static void main(String[] args){
+
+//. Write a program that calculates the area of a rectangle.
+// Take the length and breadth as inputs
+    double length = 0.0;
+    double width = 0.0;
+    double area = 0.0;
+
+    Scanner reader = new Scanner(System.in);
+    System.out.print("Enter lenght of the rectangle: ");
+    length = reader.nextDouble();
+    System.out.print("Enter the width of the rectangle: ");
+    width = reader.nextDouble();
+    area = length * width;
+    System.out.println("Area of rectangle: " + area);
+    reader.close();
+}
+}
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework10 {
+    public static void main(String[] args) {
+//Write a program that reverses the sign of an entered integer using unary minus operator.
+        Scanner scanner = new Scanner(System.in);
+//
+//        int aNumber;
+//        aNumber = 10;
+//        System.out.println(aNumber++);
+//        System.out.println(++aNumber);
+//        System.out.println(aNumber--);
+//        System.out.println(--aNumber);
+
+        System.out.print("Enter an integer: ");
+        int sum = scanner.nextInt();
+
+        sum = -sum;
+        System.out.println("The reversed sign value is: " + sum);
+
+
+
+    }
+}
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework11 {
+    public static void main(String[] args) {
+        //Write a Java program that takes two boolean inputs from a user.
+        // Apply the logical negation operator (!) to each and print the result.
+        Scanner scanner = new Scanner(System.in);
+        int count = 6;
+
+        System.out.println(!(count > 2));  // prints true
+        System.out.println(!(count <= 2)); // prints false
+        boolean x = true;
+        boolean y = false;
+
+        System.out.println(!(x && y));  // prints true
+        System.out.println(!(x || y));  // prints false
+    }
+}
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework12 {
+    public static void main(String[] args) {
+
+//Create a program that takes an integer as input and then increments
+// and decrements it by 1, displaying the output at each stage
+        Scanner scanner = new Scanner(System.in);
+
+        int num = 15;
+        System.out.println("Original value of the num: " + num);
+        num++;
+        System.out.println("variable++ = " + num);
+        ++num;
+        System.out.println("++variable = " + num);
+
+        int num2 = 20;
+        System.out.println("Original value of the num: " + num2);
+        num2--;
+        System.out.println("Integer num = " + num2);
+        --num2;
+        System.out.println("Integer num = " + num2);
+    }
+}
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework13 {
+    public static void main(String[] args) {
+// Write a program to calculate the price after discount. Take the original price and discount
+// percentage as input. Use compound assignment operator to perform the calculation.
+
+        Scanner sc = new Scanner(System.in);
+
+        int price;
+        int discount;
+        System.out.println("Enter price of the product: ");
+        price = sc.nextInt();
+
+        System.out.println("Enter the discount(%) of the product: ");
+        discount = sc.nextInt();
+
+
+    int discountPrice = (price * discount ) / 100;
+    int finalPrice = price - discountPrice;
+
+        System.out.println("Discount price is: " + discountPrice);
+        System.out.println("Final price is: " + finalPrice);
+
+    }
+}
+package Homework;
+
+import java.util.Scanner;
+
+public class Homework14 {
+    public static void main(String[] args) {
+//Create a program that checks if a user entered number is within a
+// specific range (e.g., 1-100). Use relational operators for the checks.
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        if ( num >= 1 && num <= 100) {
+            System.out.println("The number is within the range of 1 to 100.");
+        } else {
+            System.out.println("The number is not in range of 1-100.");
+        }
+    }
+}
+package Homework;
+import java.util.Scanner;
+public class HomeWorses5 {
+      //  System.out.println("Incercarile mele");
+
+            public static void main(String[] args) {
+//17*sesion4
+                String Username;
+                String Password;
+
+                Password = "8989";
+                Username = "Veronica";
+
+                Scanner input1 = new Scanner(System.in);
+                System.out.println("Enter Username : ");
+                String username = input1.next();
+
+                Scanner input2 = new Scanner(System.in);
+                System.out.println("Enter Password : ");
+                String password = input2.next();
+
+                if (username.equals(Username) && password.equals(Password)) {
+
+                    System.out.println("Access Granted! Welcome!");
+                } else if (username.equals(Username)) {
+                    System.out.println("Invalid Password!");
+                } else if (password.equals(Password)) {
+                    System.out.println("Invalid Username!");
+                } else {
+                    System.out.println("Invalid Username & Password!");
+                }
+
+
+            }
+
+}

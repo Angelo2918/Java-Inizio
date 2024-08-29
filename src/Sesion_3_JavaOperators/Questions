@@ -1,0 +1,11 @@
+I.What is a Stack and a Queue? Ho do they work and when are used?
+Stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle.
+ Queue is a container of objects (a linear collection) that are inserted and removed according to
+  the first-in first-out (FIFO) principle.
+
+
+
+
+II.What is the difference between for and for enhanced? When I should use one or another?
+Use the traditional for loop when you need explicit control over the iteration, need to modify the elements, or do not iterate over an array or collection.
+Use the enhanced for loop for simplicity and readability when you simply need to access each element of an array or collection without modifying them.
