@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ArrayListVsLinkedList {
     public static void main(String... args) {
-        System.out.println("Array exe");
+
         List<String> arrayList = new ArrayList<>();
         arrayList.add("Sam");
         arrayList.add("Ion");
