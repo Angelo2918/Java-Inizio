@@ -16,7 +16,7 @@ public class Main_Homeworks {
         //Date();
         //DateDecomposition();
         //SpecificDateReturns();
-        CurentTime();
+        //CurentTime();
     }
     //Write a method named displayCurrentTime that prints the current time to the console.
     //Expected Output: The current time in the format HH:MM:SS.
@@ -24,7 +24,7 @@ public class Main_Homeworks {
 
         DateTimeFormatter newFormat = DateTimeFormatter.ofPattern("dd MMMM yyyy HH:mm:ss");
         SimpleDateFormat parsedDateTime;
-        System.out.println("New format date time: " + parsedDateTime.format(newFormat));
+      //  System.out.println("New format date time: " + parsedDateTime.format(newFormat));
 
     }
         //Write a method named createSpecificDate that returns a date object representing 19th August 2025.
