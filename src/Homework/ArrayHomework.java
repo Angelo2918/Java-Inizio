@@ -9,7 +9,7 @@ public class ArrayHomework {
 
         //shopList();//EX-1
         //arrayTenOdd();//EX-4
-        cityChose();//EX-5
+        //cityChose();//EX-5
         //movieSearch();//EX-8
         //christmasPresents();//EX-2
     }
