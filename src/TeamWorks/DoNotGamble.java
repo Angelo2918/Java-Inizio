@@ -1,4 +1,4 @@
-package GhicesteNumarul;
+package TeamWorks;
 
 import java.util.DoubleSummaryStatistics;
 import java.util.Random;
