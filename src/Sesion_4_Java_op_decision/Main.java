@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         // Commented out unused methods for now
 //        sum(5, 6);
-//        Main main = new Main();
+//        Chestii_Utile_Futuro.Main main = new Chestii_Utile_Futuro.Main();
 //        int x = main.sum2(3, 6);
 //        equality();
 
