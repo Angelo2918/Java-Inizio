@@ -36,7 +36,7 @@ class FitnessTracker {
     }
 }
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         int numTrackers = 3;
         FitnessTracker[] trackers = new FitnessTracker[numTrackers];
