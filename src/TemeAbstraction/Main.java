@@ -5,6 +5,8 @@ public class Main {
         Parent obj1 = new FirstSubClass();
         obj1.message();
 
+
+
         Parent obj2 = new FirstSubClass();
         obj2.message();
     }
