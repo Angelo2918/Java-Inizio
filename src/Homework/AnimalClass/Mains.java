@@ -52,8 +52,8 @@ class Wolf extends Animal {
     }
 }
 
-public class Main {
-    public static void main(String[] args) {
+public class Mains {
+    protected static void main(String[] args) {
         Animal dog = new Dog("Lucy", 3);
         Animal cat = new Cat("Luna", 4);
         Animal wolf = new Wolf("Bursuc", 5);

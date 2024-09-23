@@ -2,8 +2,8 @@ package sistem_gestiune_angajati;
 
 public abstract class Employee {
 
-    private String name;
-    private int id;
+    public String name;
+    public int id;
     private double salary;
 
     public Employee(String name, int id, double salary) {
