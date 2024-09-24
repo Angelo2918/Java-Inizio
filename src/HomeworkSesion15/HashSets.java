@@ -4,6 +4,7 @@ import java.util.*;
 
 public class HashSets {
     public static void main(String... args) {
+        //HashSet
         appendToTheEnd();//1
         iterateThroughElements();//2
         getNumberElements();//3

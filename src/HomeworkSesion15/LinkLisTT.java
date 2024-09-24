@@ -6,6 +6,7 @@ import java.util.ListIterator;
 
 public class LinkLisTT {
     public static void main(String... args) {
+       //LinkedList
         appendElement();//1
         iterateElements();//2
         iterElemIterate();//3
