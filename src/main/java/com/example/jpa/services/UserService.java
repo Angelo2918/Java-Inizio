@@ -13,10 +13,9 @@ import java.util.Optional;
 @Service
 public class UserService {
     @Autowired
-    private UserJpaRepository repository2;
-
-
     private UserRepository repository;
+    @Autowired
+    private UserJpaRepository jpaRepository;
 
     public Iterable<User> saveAll(List<User> users){return repository.saveAll(users);}
 
@@ -29,7 +28,7 @@ public class UserService {
     }
 
     public User addUser(User user) {
-    return jpaRepository.save(user);
-
+        // Save User
+        return jpaRepository.save(user);
     }
 }
