@@ -1,8 +1,10 @@
 package com.example.jpa.controllers;
 
 import com.example.jpa.dtos.CreateUserDto;
+import com.example.jpa.exceptions.UserServiceException;
 import com.example.jpa.models.User;
 import com.example.jpa.services.UserService;
+import jdk.swing.interop.SwingInterOpUtils;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -52,7 +54,13 @@ public class UserController {
     }
     @PostMapping("/create-from-dto")
     public ResponseEntity<User> createUserFromDto(@RequestBody CreateUserDto userDto){
-        User user = service.createUserFromDto(userDto);
+       User user = new User();
+        try {
+            user = service.createUserFromDto(userDto);
+        }catch(UserServiceException ex){
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getErrorCode());
+        }
         return ResponseEntity.ok(user);
 
 
