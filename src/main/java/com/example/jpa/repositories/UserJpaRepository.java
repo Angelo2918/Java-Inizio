@@ -18,7 +18,7 @@ public interface UserJpaRepository extends JpaRepository<User, Long> {
 
     List<User> findByActiveOrderByUsernameDesc(boolean active);
 
-    List<User> findByRegistrationDateBetween(LocalDate start,LocalDate end);
+    List<User> findByRegistrationDateBetween(LocalDate start, LocalDate end);
 
     List<User> findByNameIgnoreCase(String name);
 
@@ -33,7 +33,7 @@ public interface UserJpaRepository extends JpaRepository<User, Long> {
     List<User> findUsersOver30();
 
 
-    @Query(value = "select u from users u where u.age > 30",nativeQuery = true)
+    @Query(value = "select u from users u where u.age > 30", nativeQuery = true)
     List<User> findUsersOver30NativeQuery();
 
 }

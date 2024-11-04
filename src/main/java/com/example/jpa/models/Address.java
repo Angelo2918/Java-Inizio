@@ -1,5 +1,6 @@
 package com.example.jpa.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Address {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String city;
@@ -20,7 +21,8 @@ public class Address {
     private String country;
     private Integer numberOfStreet;
 
-    @OneToOne(mappedBy = "address",fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "address")
+    @JsonBackReference
     private User user;
 
 }

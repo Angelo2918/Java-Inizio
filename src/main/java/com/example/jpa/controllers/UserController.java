@@ -1,5 +1,6 @@
 package com.example.jpa.controllers;
 
+import com.example.jpa.dtos.CreateUserDto;
 import com.example.jpa.models.User;
 import com.example.jpa.services.UserService;
 import org.apache.coyote.Response;
@@ -45,8 +46,17 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> addUser(@RequestBody User user){
+    public ResponseEntity<User> addUser(@RequestBody User user) {
         User savedUser = service.addUser(user);
         return ResponseEntity.ok(savedUser);
     }
+    @PostMapping("/create-from-dto")
+    public ResponseEntity<User> createUserFromDto(@RequestBody CreateUserDto userDto){
+        User user = service.createUserFromDto(userDto);
+        return ResponseEntity.ok(user);
+
+
+    }
+
+
 }
