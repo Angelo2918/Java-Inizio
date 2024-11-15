@@ -33,9 +33,11 @@ public class OrderService {
 
 
 
-        } else System.out.println("User with id: " + userId + "not found!");
-
-        return orderRepository.save(order);
+        } else {
+            System.out.println("User with id: " + userId + "not found!");
+            return null;
+        }
+       return orderRepository.save(order);
     }
 
     public List<Order> getOrdersWithPagination(Long userId, int page, int size) {
