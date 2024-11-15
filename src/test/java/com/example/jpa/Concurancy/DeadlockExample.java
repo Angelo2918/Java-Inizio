@@ -24,7 +24,7 @@ public class DeadlockExample {
         });
 
         Thread t2 = new Thread(() -> {
-            System.out.println("T2: Incerc saobtin resursa1");
+            System.out.println("T2: Incerc sa obtin resursa1");
             synchronized (RESOURCE1) {
                 System.out.println("T2: Am obtinut resursa1");
 
