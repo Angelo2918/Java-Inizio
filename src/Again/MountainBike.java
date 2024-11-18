@@ -1,4 +1,4 @@
-package TRYAGAIN;
+package Again;
 
 public class MountainBike extends Bicycle {
     public String tireType;

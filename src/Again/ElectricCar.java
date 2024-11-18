@@ -1,4 +1,4 @@
-package TRYAGAIN;
+package Again;
 
 public class ElectricCar extends Car {
     public int batteryCapacity;

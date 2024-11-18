@@ -1,4 +1,4 @@
-package TRYAGAIN;
+package Again;
 
 public class SpeedBoat extends Boat {
     public int maxSpeed;

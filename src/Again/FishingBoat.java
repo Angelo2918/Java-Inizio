@@ -1,4 +1,4 @@
-package TRYAGAIN;
+package Again;
 
 public class FishingBoat extends Boat {
     public int fishCapacity;

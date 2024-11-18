@@ -1,4 +1,4 @@
-package TRYAGAIN;
+package Again;
 
 public class Bicycle {
     public int speed;
