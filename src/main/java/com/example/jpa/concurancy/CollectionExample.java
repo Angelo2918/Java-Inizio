@@ -1,4 +1,4 @@
-package com.example.jpa.Concurancy;
+package com.example.jpa.concurancy;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

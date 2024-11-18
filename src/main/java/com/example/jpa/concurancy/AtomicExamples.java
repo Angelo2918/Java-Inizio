@@ -1,4 +1,4 @@
-package com.example.jpa.Concurancy;
+package com.example.jpa.concurancy;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

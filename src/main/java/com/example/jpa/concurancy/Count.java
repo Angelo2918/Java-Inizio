@@ -1,4 +1,4 @@
-package com.example.jpa.Concurancy;
+package com.example.jpa.concurancy;
 
 public class Count {
     public static int count = 0;
