@@ -1,4 +1,4 @@
-package com.example.jpa.concurancy;
+package com.example.jpa.otherStuff.recap.concurancy;
 
 public class MyThread extends Thread {
     @Override

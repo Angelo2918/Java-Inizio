@@ -1,4 +1,4 @@
-package com.example.jpa.designpatterns;
+package com.example.jpa.otherStuff.recap.designpatterns;
 
 import java.util.ArrayList;
 import java.util.List;

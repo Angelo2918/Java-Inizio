@@ -1,4 +1,4 @@
-package com.example.jpa.concurancy;
+package com.example.jpa.otherStuff.recap.concurancy;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

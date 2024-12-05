@@ -1,4 +1,4 @@
-package com.example.jpa.designpatterns;
+package com.example.jpa.otherStuff.recap.designpatterns;
 
 class SistemAudio{
     public void pornesteAudio(){

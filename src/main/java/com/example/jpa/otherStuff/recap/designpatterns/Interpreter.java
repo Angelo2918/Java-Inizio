@@ -1,6 +1,4 @@
-package com.example.jpa.designpatterns;
-
-import jdk.swing.interop.SwingInterOpUtils;
+package com.example.jpa.otherStuff.recap.designpatterns;
 
 interface Expression {
     int interpret();

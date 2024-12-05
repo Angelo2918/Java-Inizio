@@ -1,6 +1,4 @@
-package com.example.jpa.designpatterns;
-
-import org.springframework.scheduling.support.SimpleTriggerContext;
+package com.example.jpa.otherStuff.recap.designpatterns;
 
 interface Animal {
     void makeSound();
