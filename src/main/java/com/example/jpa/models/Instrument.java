@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents an instrument entity with details such as ID, name, price, category, manufacturer, and stock quantity.
+ */
 @Entity
 @Table(name = "instrument")
 @Data

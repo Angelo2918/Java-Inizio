@@ -5,7 +5,7 @@ import com.example.jpa.exceptions.EmailSendingException;
 import com.example.jpa.exceptions.UserServiceException;
 import com.example.jpa.models.User;
 import com.example.jpa.repositories.UserJpaRepository;
-import com.example.jpa.services.EmailService;
+import com.example.jpa.impl.EmailService;
 import com.example.jpa.services.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;

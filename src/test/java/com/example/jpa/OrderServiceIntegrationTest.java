@@ -4,7 +4,7 @@ import com.example.jpa.models.Order;
 import com.example.jpa.models.User;
 import com.example.jpa.repositories.OrderRepository;
 import com.example.jpa.repositories.UserJpaRepository;
-import com.example.jpa.services.OrderService;
+import com.example.jpa.impl.OrderServiceImpl;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class OrderServiceIntegrationTest {
 
     @Autowired
-    private OrderService service;
+    private OrderServiceImpl service;
 
 
     @Autowired

@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Controller class for managing instruments in the system.
+ * Provides endpoints for retrieving all instruments,
+ * retrieving an instrument by ID, and creating a new instrument.
+ */
 @RestController
 @RequestMapping("/api/instruments")
 public class InstrumentController {

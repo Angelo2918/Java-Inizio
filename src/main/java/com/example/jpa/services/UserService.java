@@ -3,12 +3,12 @@ package com.example.jpa.services;
 import com.example.jpa.dtos.CreateUserDto;
 import com.example.jpa.exceptions.EmailSendingException;
 import com.example.jpa.exceptions.UserServiceException;
+import com.example.jpa.impl.EmailService;
 import com.example.jpa.models.User;
 import com.example.jpa.repositories.UserJpaRepository;
 import com.example.jpa.repositories.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
