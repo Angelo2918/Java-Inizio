@@ -1,6 +1,7 @@
 package com.example.jpa.impl;
 
 import com.example.jpa.dtos.CreateUserDto;
+import com.example.jpa.models.Instrument;
 import com.example.jpa.models.User;
 import com.example.jpa.repositories.UserJpaRepository;
 import com.example.jpa.repositories.UserRepository;
@@ -9,8 +10,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -66,4 +69,11 @@ public class UserServiceImpl implements UserService {
 
         return savedUser;
     }
+    public Set<Instrument> getWishlist(long userId){
+        Optional<User> user = jpaRepository.findById(userId);
+        if (user.isPresent())
+        return user.get().getWishlist();
+        else return Collections.EMPTY_SET;
+    }
+
 }

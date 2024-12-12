@@ -2,6 +2,7 @@ package com.example.jpa.controllers;
 
 import com.example.jpa.dtos.CreateUserDto;
 import com.example.jpa.exceptions.UserServiceException;
+import com.example.jpa.models.Instrument;
 import com.example.jpa.models.User;
 import com.example.jpa.services.UserService;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * Represents a REST controller for handling user-related operations.
@@ -66,5 +68,8 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-
+@GetMapping("/wishlist")
+    public ResponseEntity<Set<Instrument>> getWishlist(@PathVariable Long id){
+        return ResponseEntity.ok(service.getWishlist(id));
+}
 }
