@@ -68,7 +68,7 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-@GetMapping("/wishlist")
+@GetMapping("/wishlist/id")
     public ResponseEntity<Set<Instrument>> getWishlist(@PathVariable Long id){
         return ResponseEntity.ok(service.getWishlist(id));
 }
