@@ -7,12 +7,13 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
-    public void sendEmail(String to,String subject,String body) throws EmailSendingException {
+    public void sendEmail(String to, String subject, String body) throws EmailSendingException {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setSubject(subject);
@@ -20,7 +21,7 @@ public class EmailService {
 
         try {
             mailSender.send(message);
-        }catch (MailException ex){
+        } catch (MailException ex) {
             throw new EmailSendingException("Failed to send email: " + ex.getMessage());
         }
 

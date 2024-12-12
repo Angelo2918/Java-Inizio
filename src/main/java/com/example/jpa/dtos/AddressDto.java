@@ -3,9 +3,11 @@ package com.example.jpa.dtos;
 import lombok.Data;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Data
 @ToString
-public class AddressDto {
+public class AddressDto implements Serializable {
 
     private String city;
     private String street;

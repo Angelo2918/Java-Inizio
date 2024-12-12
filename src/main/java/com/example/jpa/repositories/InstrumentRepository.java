@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.util.List;
 
+
 @Repository
 public interface InstrumentRepository extends JpaRepository<Instrument, Long> {
     List<Instrument> findByCategory(InstrumentCategory category);

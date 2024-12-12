@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+
 public interface UserJpaRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String username);
 
@@ -28,10 +29,8 @@ public interface UserJpaRepository extends JpaRepository<User, Long> {
 
     List<User> findByUsernameStartingWith(String text);
 
-
-    @Query("SELECT u From User u where u.age > 30")
+    @Query("SELECT u FROM User u where u.age > 30")
     List<User> findUsersOver30();
-
 
     @Query(value = "select u from users u where u.age > 30", nativeQuery = true)
     List<User> findUsersOver30NativeQuery();

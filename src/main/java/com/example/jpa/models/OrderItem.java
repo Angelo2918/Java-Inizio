@@ -1,13 +1,13 @@
 package com.example.jpa.models;
 
+import com.example.jpa.models.Instrument;
+import com.example.jpa.models.Order;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
-/**
- * Represents an item in an order with details such as ID, associated instrument, quantity, and order.
- */
 @Entity
 @Table(name = "order_item")
 @Data
@@ -16,17 +16,16 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @ManyToOne
     @JoinColumn(name = "instrument_id", nullable = false)
     private Instrument instrument;
-
 
     @Column(nullable = false)
     private Integer quantity;
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
+    @JsonBackReference
     private Order order;
 
     public OrderItem() {
@@ -38,24 +37,21 @@ public class OrderItem {
         this.instrument = instrument;
     }
 
-
     public BigDecimal getSubtotal() {
         return instrument.getPrice().multiply(BigDecimal.valueOf(quantity));
-
     }
 
     public void setQuantity(Integer quantity) {
         if (quantity <= 0)
             throw new IllegalArgumentException("Quantity must be positive!");
-        if (quantity > instrument.getStockQuantity())
-            throw new IllegalStateException("Insufficient stock for this instrument!");
+//        if (quantity > instrument.getStockQuantity())
+//            throw new IllegalStateException("Insufficient stock for this instrument!");
 
         this.quantity = quantity;
-
     }
 
-public void updateInstrumentStock(){
-        instrument.setStockQuantity(instrument.getStockQuantity());
-}
+    public void updateInstrumentStock() {
+        this.instrument.setStockQuantity(this.instrument.getStockQuantity() - this.quantity);
+    }
 
 }

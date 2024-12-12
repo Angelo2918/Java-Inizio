@@ -8,16 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Controller class for managing instruments in the system.
- * Provides endpoints for retrieving all instruments,
- * retrieving an instrument by ID, and creating a new instrument.
- */
 @RestController
 @RequestMapping("/api/instruments")
 public class InstrumentController {
     private final InstrumentService instrumentService;
-
 
     public InstrumentController(InstrumentService service) {
         this.instrumentService = service;
@@ -31,10 +25,10 @@ public class InstrumentController {
     @GetMapping("/{id}")
     public ResponseEntity<Instrument> getInstrumentById(@PathVariable Long id) {
         return ResponseEntity.ok(instrumentService.findInstrumentById(id));
-
     }
+
     @PostMapping
-    public ResponseEntity<Instrument>createInstrument(@RequestBody Instrument instrument){
+    public ResponseEntity<Instrument> createInstrument(@RequestBody Instrument instrument) {
         Instrument createdInstrument = instrumentService.createInstrument(instrument);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdInstrument);
     }

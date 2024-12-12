@@ -1,13 +1,17 @@
 package com.example.jpa.impl;
 
 import com.example.jpa.enums.OrderStatus;
+import com.example.jpa.models.Instrument;
 import com.example.jpa.models.Order;
 import com.example.jpa.models.OrderItem;
 import com.example.jpa.models.User;
+import com.example.jpa.repositories.InstrumentRepository;
 import com.example.jpa.repositories.OrderRepository;
 import com.example.jpa.repositories.UserJpaRepository;
+
 import com.example.jpa.services.OrderService;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,12 +21,17 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This class provides implementation for handling orders.
+ */
 @Service
 public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderRepository orderRepository;
     @Autowired
     private UserJpaRepository userRepository;
+    @Autowired
+    private InstrumentRepository instrumentRepository;
 
     /**
      * Places an order for a specific user
@@ -37,9 +46,28 @@ public class OrderServiceImpl implements OrderService {
         if (userOpt.isPresent()) {
             User user = userOpt.get();
             order.setUser(user);
-            order.setItems(items);
             order.setStatus(OrderStatus.PENDING);
             order.setOrderDate(LocalDate.now());
+
+            List<OrderItem> orderItems = items.stream()
+                    .map(item -> {
+                        OrderItem orderItem = new OrderItem();
+                        orderItem.setOrder(order);
+                        orderItem.setQuantity(item.getQuantity());
+
+                        if (item.getInstrument() == null) {
+                            Instrument instrument = instrumentRepository.findById(item.getInstrument().getId())
+                                    .orElseThrow(() -> new EntityNotFoundException("Instrument not found!"));
+                            orderItem.setInstrument(instrument);
+                        } else {
+                            System.out.println("item.getInstrument() = " + item.getInstrument());
+                            orderItem.setInstrument(item.getInstrument());
+                        }
+
+                        return orderItem;
+                    }).toList();
+
+            order.setItems(orderItems);
             order.calculateTotalAmount();
             items.forEach(OrderItem::updateInstrumentStock);
         } else {
@@ -50,9 +78,22 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public List<Order> getOrdersWithPagination(Long userId, int page, int size) {
-
         PageRequest pageRequest = PageRequest.of(page - 1, size);
         Page<Order> orderPage = orderRepository.findByUserId(userId, pageRequest);
         return orderPage.getContent();
+    }
+
+    @Transactional
+    public Order cancelOrder(Long orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new EntityNotFoundException("Order was not found!"));
+
+        order.getItems().forEach(item -> {
+            Instrument instrument = item.getInstrument();
+            instrument.setStockQuantity(instrument.getStockQuantity() + item.getQuantity());
+        });
+
+        order.setStatus(OrderStatus.CANCELLED);
+        return orderRepository.save(order);
     }
 }

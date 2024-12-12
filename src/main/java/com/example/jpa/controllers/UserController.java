@@ -4,9 +4,6 @@ import com.example.jpa.dtos.CreateUserDto;
 import com.example.jpa.exceptions.UserServiceException;
 import com.example.jpa.models.User;
 import com.example.jpa.services.UserService;
-import jdk.swing.interop.SwingInterOpUtils;
-import org.apache.coyote.Response;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +11,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Represents a REST controller for handling user-related operations.
+ */
 @RestController
-@RequestMapping("api/users")
+@RequestMapping("/api/users")
 public class UserController {
-    @Autowired
-    private UserService service;
+    private final UserService service;
+
+    public UserController(UserService userService) {
+        this.service = userService;
+    }
 
     @PostMapping("/all")
     public ResponseEntity<Iterable<User>> createUsers(@RequestBody List<User> users) {
@@ -34,17 +37,15 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        service.deletUser(id);
+        service.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/{username}")
     public ResponseEntity<User> findByUsername(@PathVariable String username) {
         Optional<User> user = service.findUserByUsername(username);
-        if (user.isPresent()) {
-            return ResponseEntity.ok(user.get());
-        } else
-            return ResponseEntity.notFound().build();
+
+        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
@@ -52,18 +53,17 @@ public class UserController {
         User savedUser = service.addUser(user);
         return ResponseEntity.ok(savedUser);
     }
+
     @PostMapping("/create-from-dto")
-    public ResponseEntity<User> createUserFromDto(@RequestBody CreateUserDto userDto){
-       User user = new User();
+    public ResponseEntity<User> createUserFromDto(@RequestBody CreateUserDto userDto) {
+        User user = new User();
         try {
             user = service.createUserFromDto(userDto);
-        }catch(UserServiceException ex){
+        } catch (UserServiceException ex) {
             System.out.println(ex.getMessage());
             System.out.println(ex.getErrorCode());
         }
         return ResponseEntity.ok(user);
-
-
     }
 
 

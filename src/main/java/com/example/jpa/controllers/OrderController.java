@@ -1,9 +1,8 @@
 package com.example.jpa.controllers;
 
+
 import com.example.jpa.dtos.RequestOrderDto;
 import com.example.jpa.models.Order;
-import com.example.jpa.impl.OrderServiceImpl;
-import com.example.jpa.models.OrderItem;
 import com.example.jpa.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/orders")
+@RequestMapping("/api/orders")
 public class OrderController {
     @Autowired
     private OrderService service;
@@ -30,5 +29,8 @@ public class OrderController {
         return ResponseEntity.ok(orders);
     }
 
-
+    @PutMapping
+    public ResponseEntity<Order> cancelOrder(@RequestParam Long orderId) {
+        return ResponseEntity.ok(service.cancelOrder(orderId));
+    }
 }
