@@ -4,7 +4,7 @@ import com.example.jpa.models.Order;
 import com.example.jpa.models.User;
 import com.example.jpa.repositories.OrderRepository;
 import com.example.jpa.repositories.UserJpaRepository;
-import com.example.jpa.impl.OrderServiceImpl;
+import com.example.jpa.services.impl.OrderServiceImpl;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.example.jpa.impl;
+package com.example.jpa.services.impl;
 
 import com.example.jpa.dtos.MonthlyIncomeReport;
 import com.example.jpa.dtos.OrderWeeklyReport;
