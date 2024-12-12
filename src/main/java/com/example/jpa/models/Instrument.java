@@ -19,7 +19,6 @@ import java.util.Set;
 @Table(name = "instrument")
 @Data
 @NoArgsConstructor
-
 public class Instrument {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,18 +28,15 @@ public class Instrument {
     private String name;
     @Column(nullable = false)
     private BigDecimal price;
-
     @Enumerated(EnumType.STRING)
     private InstrumentCategory category;
     private String manufacturer;
     @Column(nullable = false)
     private int stockQuantity;
 
-
     @JsonManagedReference
     @OneToMany(mappedBy = "instrument", cascade = CascadeType.ALL)
     private List<Review> reviews = new ArrayList<>();
-
 
     @ManyToMany(mappedBy = "wishlist")
     private Set<User> users = new HashSet<>();

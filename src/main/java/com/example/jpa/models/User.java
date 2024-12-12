@@ -12,17 +12,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@Entity
+@Table(name = "users")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "users")
 public class User {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
     private String name;
     private Integer age;
@@ -38,7 +35,7 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<Order> orders;
+    private List<Order> orders = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonManagedReference
@@ -47,9 +44,9 @@ public class User {
     @ManyToMany
     @JoinTable(
             name = "wishlist",
-            joinColumns  = @JoinColumn(name ="user_id" ),
+            joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "instrument_id")
     )
-private Set<Instrument> wishlist = new HashSet<>();
+    private Set<Instrument> wishlist = new HashSet<>();
 
 }

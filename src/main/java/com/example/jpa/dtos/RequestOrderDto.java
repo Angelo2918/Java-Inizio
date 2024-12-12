@@ -11,9 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 public class RequestOrderDto {
-
         private Long userId;
         private List<OrderItem> items;
-
-
 }
