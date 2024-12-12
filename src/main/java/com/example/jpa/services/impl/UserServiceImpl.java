@@ -69,6 +69,12 @@ public class UserServiceImpl implements UserService {
 
         return savedUser;
     }
+
+    @Override
+    public Set<Instrument> getWishlist(Long id) {
+        return Set.of();
+    }
+
     public Set<Instrument> getWishlist(long userId){
         Optional<User> user = jpaRepository.findById(userId);
         if (user.isPresent())
